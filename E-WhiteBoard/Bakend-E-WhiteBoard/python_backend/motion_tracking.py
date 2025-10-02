@@ -8,7 +8,7 @@ import math
 sio = socketio.Client()
 
 try:
-    sio.connect('http://localhost:5000')
+    sio.connect(process.env.SOCKET_IO_SERVER_URL or 'http://localhost:5000')
     print("Connected to Socket.IO server")
 except Exception as e:
     print(f"Error connecting to Socket.IO server: {e}")

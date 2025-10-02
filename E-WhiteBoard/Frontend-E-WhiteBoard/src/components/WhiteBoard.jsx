@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { io } from "socket.io-client";
 
 // Connect to the Express server
-const socket = io("http://localhost:5000");
+const socket = io(process.env.SOCKET_IO_SERVER_URL || "http://localhost:5000");
 
 const Whiteboard = () => {
   const canvasRef = useRef(null);
